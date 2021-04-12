@@ -9,3 +9,7 @@ PB10 SCL
 PB11 SDA
 
 It waits untill a key is pressed and will then read the configuration from register 0x8047 until 0x8100
+
+Programming STM32F103C8T6 bluepill with ST-Link v2
+
+openocd -f STM32F103C8T6.cfg -c init -c targets -c halt -c "flash write_image erase ${OUTPUT_PATH}" -c "verify_image ${OUTPUT_PATH}" -c "reset run"
